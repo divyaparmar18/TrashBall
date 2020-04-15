@@ -17,7 +17,7 @@ function setup(){
     side1 = new Side(764,315,150, -PI/13);
     side2 = new Side(855,315,150, PI/13);
     side3 = new Side(815,380,70,PI/2);
-
+    
     paperObj = new PaperBall(100,300,20);
 
     var render = Render.create({    
@@ -48,6 +48,7 @@ function keyPressed(){
        Matter.Body.applyForce( paperObj.body, {x: paperObj.body.position.x, y: paperObj.body.position.y}, {x: 87, y: -65});
     }
 }
+
 
 
 
