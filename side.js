@@ -1,17 +1,14 @@
-class Dustbin {
+class Side {
     constructor(x, y, height, angle) {
       var options = {
         isStatic: true,
-        
     }
 
-      this.body = Bodies.rectangle(x, y, 0, height, options);
-      this.width = 140;
+      this.body = Bodies.rectangle(x, y, 20, height, options);
+      this.width = 10;
       this.height = height;
       Matter.Body.setAngle(this.body, angle);
-      this.image = loadImage("dustbin.png")
       World.add(world, this.body);
-
     }
     
     display(){
@@ -20,9 +17,11 @@ class Dustbin {
       push();
       translate(pos.x, pos.y);
       rotate(angle);
-      imageMode(CENTER);
-      image(this.image, 0, 0, this.width, this.height);
+      rectMode(CENTER);
+      strokeWeight(3);
+      stroke("black");
+      fill(255);
+      rect(0, 0, this.width, this.height);
       pop();
     }
   };
-  

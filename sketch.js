@@ -11,29 +11,29 @@ function setup(){
 
     ground = new Ground(600,height,1700,20)
 
-    
-    side1 = new Log(810,380,180, PI/2);
-    side2 = new Log(710,320,100, -PI/8);
-    side3 = new Log(910,320,100, PI/9);
-    ball = new Ball(100,300,20);
+    DustbinObj = new Dustbin(810,315,150,0);
+
+    side1 = new Side(764,315,150, -PI/13);
+    side2 = new Side(855,315,150, PI/13);
+
+    paperObj = new PaperBall(100,300,20);
 
 }
 
 function draw(){
-    background(0);
+    background("#808080");
     Engine.update(engine);
+    paperObj.display();
     ground.display();
     side1.display();
     side2.display();
-    side3.display();
-    ball.display();
-
+    DustbinObj.display();
+    
 }
 
 function keyPressed(){
     if(keyCode === 38){
-       Matter.Body.applyForce( ball.body, {x: ball.body.position.x, y: ball.body.position.y}, {x: 90, y: -55});
-    
+       Matter.Body.applyForce( paperObj.body, {x: paperObj.body.position.x, y: paperObj.body.position.y}, {x: 87, y: -65});
     }
 }
 
